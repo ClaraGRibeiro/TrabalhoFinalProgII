@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+:root {
+    --darkblue: #2C3E50;
+    --mintgreen: #1ABC9C;
+    --lightgrey: #ECF0F1;
+    --black: #2D3436;
+    --lightred: #ff7070;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    border: none;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+body{    
+    color: var(--black);
+    background-color: var(--lightgrey);
+}
+
+header{
+    color: var(--lightgrey);
+    height: 60px;
+    background-color: var(--darkblue);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    img{
+        height: 50px;
+    }
+    ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+    }
+    a.link{
+        font-size: 16px;
+        color: var(--lightgrey);
+        transition: 0.6s;
+        &:hover{
+            transition: 0.3s;
+            color: var(--mintgreen);
+        }
+    }
+}
+
+#msg{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    opacity: 1;
+    transition: opacity 3s ease;
+    text-align: center;
+}
+.sucess{
+    background-color: var(--mintgreen);
+}
+.error{
+    background-color: var(--lightred);
+}
+.hidden{
+    opacity: 0;
+    transition: opacity 3s ease;
+}
+
+main{
+    display: flex;
+    justify-content: space-around;
+    gap: 100px;
+    align-items: center;
+    width: 80%;
+    margin: 40px auto;
+    text-align: justify;
+    h2{
+        margin-bottom: 20px;
+    }
+    img{
+        width: 40%;
+        border-radius: 20px;
+        border: var(--mintgreen) 4px solid;
+    }
+    p{
+        font-size: 20px;
+        text-indent: 50px;
+    }
+    a{
+        font-weight: bold;
+        color: var(--mintgreen);
+        transition: 0.6s;
+        &:hover{
+            transition: 0.3s;
+            color: var(--darkblue);
+            border-bottom: solid 1px var(--darkblue);
+        }
+    }
+    li{
+        font-size: 20px;
+        list-style-type: decimal;
+        margin: 20px 60px;
+    }
+}
+
+.call{
+    font-size: 26px;
+    padding: 14px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: var(--lightgrey);
+    background-color: var(--mintgreen);
+    transition: 0.6s;
+    display: inline-block;
+    &:hover{
+        color: var(--lightgrey);
+        transition: 0.3s;
+        border: none;
+        transform: translateX(30px);
+    }
+}
+
+.form{
+    font-size: 18px;
+    height: calc(100vh - 100px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    form{
+        padding: 20px;
+        border: var(--darkblue) 1px solid;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        .form-group{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+            gap: 30px;
+            input{
+                font-size: 18px;
+            }
+        }
+        .form-button{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        a{
+            width: 50%;
+        }
+    }
+}
+
+footer{
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    background-color: var(--darkblue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    a{
+        color: var(--lightgrey);
+        transition: 0.6s;
+        &:hover{
+            transition: 0.3s;
+            color: var(--mintgreen);
+        }
+    }
+}
+
+.detail-tarefoco {
+    font-weight: bold;
+    background-image: linear-gradient(to right, var(--darkblue), var(--mintgreen));
+    background-clip: text;
+    color: transparent;
+}
+
+.tasks{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 80%;
+    margin: 40px auto;
+    .card-task{
+        height: 400px;
+        text-align: center;
+        padding: 20px;
+        border-radius: 20px;
+        border: var(--darkblue) 1px solid;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    }
+}
+
+.body-page{
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 80%;
+    margin: 60px auto;
+    a{
+        width:fit-content;
+    }
+}
+
+.filters{
+    position: fixed;
+    bottom: 50px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.button-green{
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 20px;
+    color: var(--darkblue);
+    background-color: var(--mintgreen);
+    transition: 0.6s;
+    &:hover{
+        transition: 0.3s;
+        color: var(--lightgrey);
+    }
+}
+
+.button-red{    
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 20px;
+    color: var(--darkblue);
+    background-color: var(--lightred);
+    transition: 0.6s;
+    &:hover{
+        transition: 0.3s;
+        color: var(--lightgrey);
+    }
+}
+
+.button-blue{    
+    text-align: center;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 20px;
+    color: var(--darkblue);
+    border: 1px solid var(--darkblue);
+    background-color: var(--lightgrey);
+    transition: 0.6s;
+    &:hover{
+        transition: 0.3s;
+        color: var(--lightgrey);
+        background-color: var(--darkblue);
+        border: 1px solid transparent;
+    }
+}
+
+
+.pending{
+    color: var(--lightred);
+    font-weight: bold;
+}
+
+
+.dropdown{
+    background-color: var(--darkblue);
+    position: absolute;
+    z-index: 999;
+    display: none;
+    right: 10%;
+}
+.dropdown-item{
+    padding: 20px;
+}
+.dropdown-button:hover ul.dropdown{
+    display: block;
+}
