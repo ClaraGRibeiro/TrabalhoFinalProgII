@@ -64,7 +64,7 @@ class TaskController extends Controller
 
         if ($task->user_id == auth()->id()) {
             $task->delete();
-            return redirect('/dashboard')->with('msg', 'Tarefa concluída com sucesso!');
+            return redirect('/dashboard')->with('msg', 'Tarefa marcada como concluída com sucesso!');
         }
     
         return redirect('/dashboard')->with('error', 'Acesso negado.');

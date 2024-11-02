@@ -12,10 +12,10 @@
     </head>
     <body>
         @if(session('msg'))
-        <p class="sucess" id="msg">{{session('msg')}}</p>
+        <p class="sucess msg">{{session('msg')}}</p>
         @endif
         @if(session('error'))
-        <p class="error" id="msg">{{session('error')}}</p>
+        <p class="error msg">{{session('error')}}</p>
         @endif
         <header>
             <a href="/"><img src="/img/light-logo.svg" alt="logo-CR.System"></a>

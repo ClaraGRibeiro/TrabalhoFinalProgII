@@ -30,8 +30,6 @@
             @endif
         </p>
         <p>{{$task->description}}</p>
-        <p>{{$task->priority}}</p>
-        <p>{{$task->status}}</p>
         <a href="/tasks/{{$task->id}}/seemore" class="button-blue">Ler Mais</a>
 
         <form action="/tasks/{{$task->id}}" method="POST" id="delete-form-{{ $task->id }}">
