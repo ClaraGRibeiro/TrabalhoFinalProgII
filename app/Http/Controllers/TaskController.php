@@ -51,7 +51,7 @@ class TaskController extends Controller
         $task->user_id = $user->id;
         $task->save();
             
-        return redirect('/dashboard')->with('msg', 'Tarefa criada com sucesso!');
+        return redirect('/dashboard')->with('msg', 'Tarefa criada!');
     }
 
     public function show($id){
@@ -59,12 +59,24 @@ class TaskController extends Controller
         return view('tasks.show', ['task' => $task]);
     }
 
+    public function edit($id) {
+        $task = Task::findOrFail($id);
+    
+        return view('tasks.edit', ['task' => $task]);
+    }
+
+    public function update(Request $request) {
+        Task::findOrFail($request->id)->update($request->all());
+    
+        return redirect('/dashboard')->with('msg', 'Tarefa editada!');
+    }
+
     public function destroy($id) {
         $task = Task::findOrFail($id);
 
         if ($task->user_id == auth()->id()) {
             $task->delete();
-            return redirect('/dashboard')->with('msg', 'Tarefa marcada como concluída com sucesso!');
+            return redirect('/dashboard')->with('msg', 'Tarefa marcada como concluída!');
         }
     
         return redirect('/dashboard')->with('error', 'Acesso negado.');

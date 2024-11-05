@@ -1,3 +1,14 @@
+function openMenu() {
+    document.getElementById('menu').style.display = 'flex';
+    document.getElementById('menu-open').style.display = 'none';
+    document.getElementById('menu-close').style.display = 'block';
+}
+function closeMenu() {
+    document.getElementById('menu').style.display = 'none';
+    document.getElementById('menu-open').style.display = 'block';
+    document.getElementById('menu-close').style.display = 'none';
+}
+
 setTimeout(() => {
     const messages = document.querySelectorAll('.msg');
     messages.forEach(msg => {

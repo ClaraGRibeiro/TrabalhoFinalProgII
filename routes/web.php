@@ -12,6 +12,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
     route::get('/tasks/create', [TaskController::class, 'create']);
     Route::post('/tasks', [TaskController::class, 'store']);
     Route::get('/tasks/{id}/seemore', [TaskController::class, 'show']);
+    Route::get('/tasks/edit/{id}', [TaskController::class, 'edit']);
+    Route::put('/tasks/update/{id}', [TaskController::class, 'update']);
     Route::delete('/tasks/{id}', [TaskController::class, 'destroy']);
     Route::delete('/account', [UserController::class, 'destroy']);
 });

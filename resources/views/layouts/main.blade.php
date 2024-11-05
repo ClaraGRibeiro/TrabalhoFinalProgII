@@ -20,7 +20,9 @@
         <header>
             <a href="/"><img src="/img/light-logo.svg" alt="logo-CR.System"></a>
             <h1>@yield('title')</h1>
-            <ul>
+            <div class="link" id="menu-open" onclick="openMenu()"><i class="fa-solid fa-bars"></i></div>
+            <div class="link" id="menu-close" onclick="closeMenu()"><i class="fa-solid fa-xmark"></i></div>
+            <ul id="menu">
                 <li><a class="link" href="/"><i class="fa-solid fa-house"></i><br>Início</a></li>
                 <li><a class="link" href="/about"><i class="fa-solid fa-circle-info"></i><br>Sobre</a></li>
                 @guest

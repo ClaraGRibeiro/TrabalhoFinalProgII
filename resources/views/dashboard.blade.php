@@ -30,9 +30,10 @@
             @endif
         </p>
         <p>{{$task->description}}</p>
-        <a href="/tasks/{{$task->id}}/seemore" class="button-blue">Ler Mais</a>
+        <a href="/tasks/{{$task->id}}/seemore" class="button-blue"><i class="fa-solid fa-book-open"></i> Ler Mais</a>
+        <a href="/tasks/edit/{{$task->id}}" class="button-blue"><i class="fa-solid fa-pen-to-square"></i> Editar</a>
 
-        <form action="/tasks/{{$task->id}}" method="POST" id="delete-form-{{ $task->id }}">
+        <form action="/tasks/{{$task->id}}" method="POST" id="delete-form-{{ $task->id }}" style="display: none">
             @csrf
             @method('DELETE')
         </form>
