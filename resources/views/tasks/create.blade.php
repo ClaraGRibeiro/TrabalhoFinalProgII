@@ -1,8 +1,8 @@
 @extends('layouts.main')
 @section('title', 'Criar')
 @section('content')
-<div class="form">
-    <form action="/tasks" method="POST" id="form">
+<div class="form-container">
+    <form class="form" action="/tasks" method="POST" id="form">
         @csrf
         <div class="form-group">
             <label for="title">Título da Tarefa</label>
@@ -24,8 +24,8 @@
             <input type="datetime-local" name="deadline" id="deadline" required>
         </div>
     
-        <div class="form-button">
-            <a href="#" onclick="document.getElementById('form').submit(); return false;" class="button-green">Criar Tarefa</a>
+        <div class="form-btn">
+            <a class="w-1/2 btn bg-mintgreen" href="#" onclick="document.getElementById('form').submit(); return false;">Criar Tarefa</a>
         </div>
     </form>
     

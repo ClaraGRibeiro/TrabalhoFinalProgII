@@ -1,8 +1,8 @@
 @extends('layouts.main')
 @section('title', 'Editar')
 @section('content')
-<div class="form">
-    <form action="/tasks/update/{{$task->id}}" method="POST" id="form">
+<div class="form-container">
+    <form class="form" action="/tasks/update/{{$task->id}}" method="POST" id="form">
         @csrf
         @method('PUT')
         <div class="form-group">
@@ -25,8 +25,8 @@
             <input type="datetime-local" name="deadline" id="deadline" required value="{{$task->deadline}}">
         </div>
     
-        <div class="form-button">
-            <a href="#" onclick="document.getElementById('form').submit(); return false;" class="button-green">Editar Tarefa</a>
+        <div class="form-btn">
+            <a class="w-1/2 btn bg-mintgreen" href="#" onclick="document.getElementById('form').submit(); return false;" class="button-green">Editar Tarefa</a>
         </div>
     </form>
     

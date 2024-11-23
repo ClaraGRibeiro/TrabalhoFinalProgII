@@ -3,5 +3,48 @@
 @tailwind utilities;
 
 [x-cloak] {
-    display: none;
+    display: none
+}
+
+body {
+    @apply font-montserrat bg-lightgrey text-black
+}
+.body-page {
+    @apply text-lg flex flex-col gap-5 m-16
+}
+.link {
+    @apply text-lightgrey text-base transition duration-300 hover:text-mintgreen hover:transition hover:duration-200 cursor-pointer
+}
+.menu-mobile {
+    @apply flex absolute top-8 right-0 flex-col bg-darkblue p-6 gap-8
+}
+.detail-tarefoco {
+    @apply font-bold bg-gradient-to-r from-darkblue to-mintgreen bg-clip-text text-transparent
+}
+.call {
+    @apply text-xl lg:text-2xl p-6 rounded-xl font-bold text-lightgrey bg-mintgreen transition duration-500 inline-block hover:text-lightgrey hover:duration-300 hover:border-0 hover:transform hover:translate-x-[30px]
+}
+.image {
+    @apply border-4 border-solid border-mintgreen rounded-xl
+}
+.form-container {
+    @apply flex items-center text-base flex-col my-auto h-[calc(100vh-3.75rem)]
+}
+.form {
+    @apply my-auto mx-16 p-5 border border-mintgreen rounded-2xl flex flex-col gap-5
+}
+.form-group {
+    @apply flex justify-between items-center flex-row gap-8
+}
+.form-btn {
+    @apply flex justify-center items-center text-center
+}
+.btn {
+    @apply text-center text-lg px-4 py-2 rounded-full text-darkblue transition duration-500 hover:text-lightgrey hover:duration-300
+}
+.msg {
+    @apply flex items-center justify-center h-8 opacity-100 transition-opacity duration-1000 ease-in-out text-center
+}
+.desapear {
+    @apply opacity-0 transition-opacity duration-1000 ease-in-out
 }
