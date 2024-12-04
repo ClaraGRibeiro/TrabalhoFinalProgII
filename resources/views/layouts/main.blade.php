@@ -9,6 +9,7 @@
         @vite('resources/css/app.css')
         <link rel="stylesheet" href="/css/styles.css">
         <script src="/js/scripts.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="https://kit.fontawesome.com/cc9f72a45c.js" crossorigin="anonymous"></script>
     </head>
     <body>

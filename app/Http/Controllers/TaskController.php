@@ -40,17 +40,23 @@ class TaskController extends Controller
     }
 
     public function store(Request $request){
-        $task = new Task;
-        $task->title = $request->title;
-        $task->description = $request->description;
-        $task->priority = $request->priority;
-        $task->deadline = $request->deadline;
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'priority' => 'required|integer|min:1|max:10',
+            'deadline' => 'required|date',
+        ]);
+    
+        $task = new Task();
+        $task->fill($validated);
+        $task->user_id = auth()->id();
         $task->status = 0;
-
-        $user = auth()->user();
-        $task->user_id = $user->id;
         $task->save();
-            
+    
+        if ($request->expectsJson()) {
+            return response()->json(['success' => true, 'task' => $task, 'id' => $task->id]);
+        }
+    
         return redirect('/dashboard')->with('msg', 'Tarefa criada!');
     }
 
@@ -66,7 +72,19 @@ class TaskController extends Controller
     }
 
     public function update(Request $request) {
-        Task::findOrFail($request->id)->update($request->all());
+        $validated = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'nullable|string',
+            'priority' => 'required|integer|min:1|max:10',
+            'deadline' => 'required|date',
+        ]);
+    
+        $task = Task::findOrFail($request->id);
+        $task->update($validated);
+    
+        if ($request->expectsJson()) {
+            return response()->json(['success' => true, 'message' => 'Tarefa editada com sucesso!']);
+        }
     
         return redirect('/dashboard')->with('msg', 'Tarefa editada!');
     }

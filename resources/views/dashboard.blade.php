@@ -13,7 +13,7 @@
     <a href="?filter=date" class="btn border border-darkblue hover:bg-darkblue">Ordenar por data</a>
     <a href="/dashboard" class="btn border border-darkblue hover:bg-darkblue">Limpar Filtro</a>
 </div>
-<div class="grid grid-cols-4 gap-5 m-10">
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 m-10">
     @foreach($tasks as $task)
     <div class="h-96 text-center p-5 rounded-xl border border-darkblue flex flex-col justify-around">
         <h3 class="text-xl lg:text-2xl text-center font-bold">{{$task->title}}</h3>

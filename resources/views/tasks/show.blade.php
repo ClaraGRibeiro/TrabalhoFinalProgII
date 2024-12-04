@@ -2,6 +2,8 @@
 @section('title', 'Tarefa')
 @section('content')
 <div class="body-page">
+    <a href="/dashboard"><span><i class="fa-solid fa-arrow-left"></i> Voltar para minhas tarefas</span></a>
+    <br>
     <h1 class="text-2xl"><span class="detail-tarefoco">{{$task->title}}</span></h1>
     <p><i class="fa-solid fa-calendar"></i> <b>Prazo:</b> {{$task->deadline}}</p>
     <p><i class="fa-solid fa-circle-info"></i> <b>Descrição:</b> {{$task->description}}</p>
